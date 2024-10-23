@@ -8,10 +8,13 @@ import java.util.Queue;
 
 public class CompleteBinaryTree {
 
+
     private Node root;
 
     public CompleteBinaryTree() {
         this.root = null;
+
+        
     }
 
     public CompleteBinaryTree(int data) {
@@ -127,6 +130,44 @@ public class CompleteBinaryTree {
                 queue.add(temp.right);
         }
         return str;
+    }
+
+    public Boolean question1(){
+        
+        Queue<Node> queue = new LinkedList<>();
+        Node data = root;
+        
+
+        if (this.root == null){
+            return false;
+        }
+        while (!queue.isEmpty()){
+            data.temp = new Node(data);
+            if (this.data <= data.left && this.data <= data.right){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public CompleteBinaryTree question2(){
+        //create the duplicate
+        //iterate through the new cloned tree and find the root.
+        // the cloned tree can be changed, so figure out how to make a second tree.
+        // figure out how to change one tree without changing the original tree
+        // 
+
+        CompleteBinaryTree tree = new CompleteBinaryTree();
+        CompleteBinaryTree cloned = CompleteBinaryTree(tree);
+        if (cloned == tree){
+            return cloned;
+        }
+        else{
+            // find out if the root has changed, if it has, return the root.
+            return this.cloned[0];
+        }
+        
+        
     }
 
     public static void main(String[] args) {

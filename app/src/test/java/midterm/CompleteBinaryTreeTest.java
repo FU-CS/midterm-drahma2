@@ -43,5 +43,78 @@ class CompleteBinaryTreeTest {
         assertEquals(tree.toString(), "1 2 4 ", "Deleting 3 should return '1 2 4'");
     }
 
+    @Test
+    void testQ1() {
+        CompleteBinaryTree tree = new CompleteBinaryTree();
+        tree.insert(1);
+        tree.insert(2);
+        tree.insert(3);
+        tree.insert(4);
+        assertEquals(false, tree.question1());
+
+    }
+
+    @Test
+    void testQ1_2() {
+        CompleteBinaryTree tree = new CompleteBinaryTree();
+        tree.insert(4);
+        tree.insert(3);
+        tree.insert(2);
+        tree.insert(1);
+        assertEquals(true, tree.question1());
+
+    }
+
+    @Test
+    void testQ1_3() {
+        CompleteBinaryTree tree = new CompleteBinaryTree();
+        tree.insert(4);
+        tree.insert(3);
+        tree.insert(2);
+        tree.insert(5);
+        tree.insert(1);
+        assertEquals(false, tree.question1());
+        tree.delete(5);
+        assertEquals(true, tree.question1());
+    }
+
+    @Test
+    void testQ1_4() {
+        CompleteBinaryTree tree = new CompleteBinaryTree();
+        tree.insert(5);
+        tree.insert(3);
+        tree.insert(7);
+        tree.insert(8);
+        tree.insert(4);
+        assertEquals(false, tree.question1());
+        
+    }
+
+    @Test
+    void testQ1_5() {
+        CompleteBinaryTree tree = new CompleteBinaryTree();
+        assertEquals(false, tree.question1());
+        
+    }
+
+    @Test
+    void testQ2_1() {
+        CompleteBinaryTree tree = new CompleteBinaryTree();
+        tree.insert(4);
+        tree.insert(3);
+        tree.insert(2);
+        tree.insert(1);
+        assertEquals(4, tree.question2());
+
+}
+
+@Test
+    void testQ2_2() {
+        CompleteBinaryTree tree = new CompleteBinaryTree();
+        tree.insert(6);
+        tree.insert(3);
+        tree.insert(7);
+        tree.insert(1);
+        assertEquals(7, tree.question2());
 
 }
